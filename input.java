@@ -1,5 +1,3 @@
-package converter;
-
 import java.util.*;
 import java.util.concurrent.Future;
 import java.awt.image.BufferedImage;

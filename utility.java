@@ -73,7 +73,7 @@ public class utility{
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
 
     public static void main(String[] args){
-        System.out.println(GREEN_BACKGROUND_BRIGHT +CYAN+"몰?루");
+        System.out.println(CYAN+"몰?루");
     }
 }
 
