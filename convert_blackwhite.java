@@ -45,37 +45,3 @@ public class convert_blackwhite implements blackwhite{
     }
 
 }
-
-
-// public Image using_greyfilter(Image){
-
-//     ImageFilter filter = new GrayFilter(true, 50);  
-//     ImageProducer producer = new FilteredImageSource(colorImage.getSource(), filter);  
-//     Image mage = Toolkit.getDefaultToolkit().createImage(producer); 
-
-//     return mage
-// }
-
-// public static void makeGray(BufferedImage img)
-// {
-    
-// }
-
-// ImageIO.write(image, "png", new File("output.png"));
-// }
-
-// ImageFilter filter = new GrayFilter(true, 50);  
-// ImageProducer producer = new FilteredImageSource(colorImage.getSource(), filter);  
-// Image mage = Toolkit.getDefaultToolkit().createImage(producer);  
-
-
-// BufferedImage image = ImageIO.read(new File("input.png"));
-
-// for(int y = 0; y < image.getHeight(); y++) {
-//    for(int x = 0; x < image.getWidth(); x++) {
-//        Color colour = new Color(image.getRGB(x, y));
-// //       Choose one from below
-// //       int Y = (int) (0.299 * colour.getRed() + 0.587 * colour.getGreen() + 0.114 * colour.getBlue());
-//        int Y = (int) (0.2126 * colour.getRed() + 0.7152 * colour.getGreen() + 0.0722 * colour.getBlue());
-//        image.setRGB(x, y, new Color(Y, Y, Y).getRGB());
-//    }
