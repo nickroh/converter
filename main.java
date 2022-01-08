@@ -37,7 +37,7 @@ class main{
          }if(option == 2){
             img = my_input.get_input();
 
-            my_edge.
+            // my_edge.
 
          }else{
             System.out.println("No option chosen");
