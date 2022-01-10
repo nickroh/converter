@@ -31,14 +31,15 @@ class main{
          if(option == 1){
             img = my_input.get_input();
         
-            my_converter.using_bufferedimage(img);
+            img = my_converter.using_bufferedimage(img);
             
             save_img(img);
          }if(option == 2){
             img = my_input.get_input();
-
+            img = my_converter.using_bufferedimage(img);
             // my_edge.
-
+            
+            save_img(img);
          }else{
             System.out.println("No option chosen");
             linespace();
