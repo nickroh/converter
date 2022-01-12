@@ -140,7 +140,7 @@ public class edge_extraction implements edge{
         }
         value = fixOutOfRangeRGBValues(value);
 
-        if(Math.abs(value)>220){
+        if(Math.abs(value)>230){
             value =255;
         }
         return value;
@@ -150,7 +150,7 @@ public class edge_extraction implements edge{
         // if(Math.random()>0.99){
         //     System.out.println(value);
         // }
-        value = 1.5*value;
+        value = 1.3*value;
         if (value < 0.0) {
             value = -value;
         }if (value > 255) {

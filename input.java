@@ -27,6 +27,7 @@ public class input {
         String trash = scanner.nextLine();
 
         if(user_input=='Y' || user_input=='y'){
+            
             System.out.println("URL: ");
             String url_string = scanner.nextLine();
             
