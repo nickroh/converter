@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.Math;
 import java.util.HashMap;
+import java.util.Scanner;
 
 interface edge{
 
@@ -73,7 +74,32 @@ public class edge_extraction implements edge{
 
     private BufferedImage convolution(BufferedImage img){
 
-        String selected_filter = "Laplacian Filter";
+        System.out.println("Choose filter option ");
+
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+        
+        String selected_filter;
+
+        if(option == 1){
+            selected_filter = LAPLACIAN_FILTER;
+        }if(option == 2){
+            selected_filter = HORIZONTAL_FILTER;
+        }if(option == 3){
+            selected_filter = SOBEL_FILTER_HORIZONTAL;
+        }if(option == 4){
+            selected_filter = SOBEL_FILTER_VERTICAL;
+        }if(option == 5){
+            selected_filter = VERTICAL_FILTER;
+        }if(option == 6){
+            selected_filter = SCHARR_FILTER_HORIZONTAL;
+        }if(option == 7){
+            selected_filter = SCHARR_FILTER_VETICAL;
+        }else{
+            selected_filter = "Laplacian Filter";
+        }
+            
+        
 
         int height = img.getHeight();
         int width = img.getWidth();
@@ -114,8 +140,8 @@ public class edge_extraction implements edge{
         }
         value = fixOutOfRangeRGBValues(value);
 
-        if(Math.abs(value)<30){
-            value =0;
+        if(Math.abs(value)>220){
+            value =255;
         }
         return value;
     }
@@ -124,6 +150,7 @@ public class edge_extraction implements edge{
         // if(Math.random()>0.99){
         //     System.out.println(value);
         // }
+        value = 1.5*value;
         if (value < 0.0) {
             value = -value;
         }if (value > 255) {
