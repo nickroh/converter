@@ -41,6 +41,10 @@ by using derivative (by filters) calculate the points of discontinuities
 1st derivative
 2nd derivative
 
+convoultion
+
+
+
 
 ### USED ARTIVLES
 
