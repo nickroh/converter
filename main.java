@@ -37,7 +37,7 @@ class main{
          }if(option == 2){
             img = my_input.get_input();
             img = my_converter.using_bufferedimage(img);
-            // my_edge.
+            img=my_edge.extract_edge(img);
             
             save_img(img);
          }else{

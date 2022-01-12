@@ -66,33 +66,41 @@ public class edge_extraction implements edge{
 
         BufferedImage new_img = img;
 
-        
+        new_img=convolution(img);
 
-        return img;
+        return new_img;
     }
 
-    private double[][] convolution(BufferedImage img){
+    private BufferedImage convolution(BufferedImage img){
 
-        String selected_filter = "Laplacian Filter";
+        String selected_filter = "Sobel Vertical Filter";
 
         int height = img.getHeight();
         int width = img.getWidth();
 
+        BufferedImage return_image = img;
+
         double[][] convolution = new double[width+2][height+2];
         double[][] convolutioned = new double[width][height];
-        for(int j=1;j<height;j++){
+        for(int j=1;j<height+1;j++){
             for(int i=1;i<width+1;i++){
                 convolution[i][j]=img.getRGB(i-1, j-1);
             }
         }
 
-        for(int j=1;j<height;j++){
+        for(int j=1;j<height+1;j++){
             for(int i=1;i<width+1;i++){
                 convolutioned[i-1][j-1]= calculate_convolution(filterMap.get(selected_filter), convolution,i,j);
             }
         }
 
-        return convolution;
+        for(int j=0;j<height;j++){
+            for(int i=0;i<width;i++){
+                return_image.setRGB(i, j, (int)convolutioned[i][j]);
+            }
+        }
+
+        return return_image;
     }
 
     private double calculate_convolution(double[][] filter, double[][] convolution, int x, int y){
@@ -101,13 +109,23 @@ public class edge_extraction implements edge{
         
         for(int j=0;j<3;j++){
             for(int i=0;i<3;i++){
-                
+                value += filter[i][j]*convolution[x-1+i][y-1+j];
             }
         }
-
+        value = fixOutOfRangeRGBValues(value);
         return value;
     }
 
+    private int fixOutOfRangeRGBValues(double value) {
+        if (value < 0.0) {
+            value = -value;
+        }
+        if (value > 255) {
+            return 255;
+        } else {
+            return (int) value;
+        }
+        }
 
 }
 // (filterMap.get(LAPLACIAN_FILTER)[0][0];
