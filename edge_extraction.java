@@ -73,7 +73,7 @@ public class edge_extraction implements edge{
 
     private BufferedImage convolution(BufferedImage img){
 
-        String selected_filter = "Sobel Vertical Filter";
+        String selected_filter = "Laplacian Filter";
 
         int height = img.getHeight();
         int width = img.getWidth();
@@ -84,19 +84,19 @@ public class edge_extraction implements edge{
         double[][] convolutioned = new double[width][height];
         for(int j=1;j<height+1;j++){
             for(int i=1;i<width+1;i++){
-                convolution[i][j]=img.getRGB(i-1, j-1);
+                convolution[i][j]=img.getRGB(i-1, j-1)&0xff;  
             }
         }
 
         for(int j=1;j<height+1;j++){
             for(int i=1;i<width+1;i++){
                 convolutioned[i-1][j-1]= calculate_convolution(filterMap.get(selected_filter), convolution,i,j);
-            }
+            } 
         }
 
         for(int j=0;j<height;j++){
             for(int i=0;i<width;i++){
-                return_image.setRGB(i, j, (int)convolutioned[i][j]);
+                return_image.setRGB(i, j, ((int)convolutioned[i][j]<<16)|((int)convolutioned[i][j]<<8)|((int)convolutioned[i][j]));
             }
         }
 
@@ -113,19 +113,30 @@ public class edge_extraction implements edge{
             }
         }
         value = fixOutOfRangeRGBValues(value);
+
+        if(Math.abs(value)<30){
+            value =0;
+        }
         return value;
     }
 
     private int fixOutOfRangeRGBValues(double value) {
+        // if(Math.random()>0.99){
+        //     System.out.println(value);
+        // }
         if (value < 0.0) {
             value = -value;
-        }
-        if (value > 255) {
+        }if (value > 255) {
             return 255;
-        } else {
-            return (int) value;
         }
-        }
+        return reverse_blackwhite((int)value);
+
+        
+    }
+    
+    private int reverse_blackwhite(int value){
+        return 255-value;
+    }
 
 }
 // (filterMap.get(LAPLACIAN_FILTER)[0][0];
