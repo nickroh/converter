@@ -122,7 +122,7 @@ public class edge_extraction implements edge{
 
         for(int j=0;j<height;j++){
             for(int i=0;i<width;i++){
-                return_image.setRGB(i, j, ((int)convolutioned[i][j]<<16)|((int)convolutioned[i][j]<<8)|((int)convolutioned[i][j]));
+                return_image.setRGB(i, j, (255<<24|(int)convolutioned[i][j]<<16)|((int)convolutioned[i][j]<<8)|((int)convolutioned[i][j]));
             }
         }
 
@@ -140,7 +140,7 @@ public class edge_extraction implements edge{
         }
         value = fixOutOfRangeRGBValues(value);
 
-        if(Math.abs(value)>230){
+        if(Math.abs(value)>240){
             value =255;
         }
         return value;

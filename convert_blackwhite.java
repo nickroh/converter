@@ -29,7 +29,7 @@ public class convert_blackwhite implements blackwhite{
             int r = (p>>16)&0xff;
             int g = (p>>8)&0xff;
             int b = p&0xff;
-    
+            
             //calculate average
             int avg = (r+g+b)/3;
     
