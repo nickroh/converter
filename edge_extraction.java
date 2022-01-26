@@ -10,22 +10,9 @@ import java.util.Scanner;
 interface edge{
 
     // void choose_option();
+    BufferedImage extract_edge(BufferedImage img);
+    
 
-    // BufferedImage extract_edge_vertical(BufferedImage img);
-
-    // BufferedImage extract_edge_SobelVertical(BufferedImage img);
-
-    // BufferedImage extract_edge_ScharrVertical(BufferedImage img);
-
-    // BufferedImage extract_edge_Horizontal(BufferedImage img);
-
-    // BufferedImage extract_edge_SobelHorizontal(BufferedImage img);
-
-    // BufferedImage extract_edge_ScharrHorizontal(BufferedImage img);
-
-    // BufferedImage extract_edge_Laplacian(BufferedImage img);
-
-    // BufferedImage extract_canny_edge(BufferedImage img);
 }
 
 public class edge_extraction implements edge{
@@ -166,4 +153,3 @@ public class edge_extraction implements edge{
     }
 
 }
-// (filterMap.get(LAPLACIAN_FILTER)[0][0];
