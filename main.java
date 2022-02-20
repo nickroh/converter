@@ -1,9 +1,6 @@
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.io.IOException;
-import java.time.Year;
-
 import javax.imageio.ImageIO;
 import java.util.*;
 

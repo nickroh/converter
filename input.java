@@ -1,8 +1,6 @@
 import java.util.*;
 import java.util.concurrent.Future;
 import java.awt.image.BufferedImage;
-import java.net.MalformedURLException;
-import java.nio.channels.spi.SelectorProvider;
 import java.net.*;
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +8,6 @@ import javax.imageio.ImageIO;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class input {
 
