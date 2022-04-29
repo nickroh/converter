@@ -63,7 +63,7 @@ class main{
    private static void save_img(BufferedImage img){
       File f = null;
       try{
-         f = new File("/Users/Patron/Desktop/dev/image/converter/output.png");
+         f = new File("output.png");
          ImageIO.write(img, "png", f);
        }catch(IOException e){
          System.out.println(e);
