@@ -59,6 +59,14 @@ public class edge_extraction implements edge{
 
         System.out.println("Choose filter option ");
 
+        System.out.println("1: LAPLACIAN_FILTER");
+        System.out.println("2: HORIZONTAL_FILTER");
+        System.out.println("3: SOBEL_FILTER_HORIZONTAL");
+        System.out.println("4: SOBEL_FILTER_VERTICAL");
+        System.out.println("5: VERTICAL_FILTER");
+        System.out.println("6: SCHARR_FILTER_HORIZONTAL");
+        System.out.println("7: SCHARR_FILTER_VETICAL");
+
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         
@@ -123,7 +131,7 @@ public class edge_extraction implements edge{
         }
         value = fixOutOfRangeRGBValues(value);
 
-        if(Math.abs(value)>240){
+        if(Math.abs(value)>230){
             value =255;
         }
         return value;
