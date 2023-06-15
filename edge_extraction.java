@@ -134,6 +134,9 @@ public class edge_extraction implements edge{
         if(Math.abs(value)>230){
             value =255;
         }
+        if(value < 100){
+            value = 0;
+        }
         return value;
     }
 
@@ -144,9 +147,11 @@ public class edge_extraction implements edge{
         value = 1.3*value;
         if (value < 0.0) {
             value = -value;
-        }if (value > 255) {
+        }
+        if (value > 255) {
             return 255;
         }
+        
         return reverse_blackwhite((int)value);
 
         
