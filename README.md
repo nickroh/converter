@@ -43,11 +43,10 @@ by using derivative (by filters) calculate the points of discontinuities
 
 convoultion
 
-
+test
 
 
 ### USED ARTIVLES
 
 <a>https://medium.com/javarevisited/building-a-java-edge-detection-application-6147b68e5d79</a>
-
 
